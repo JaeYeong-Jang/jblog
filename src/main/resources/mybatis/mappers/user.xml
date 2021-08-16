@@ -19,5 +19,20 @@
 			where id = #{id}
 		]]>
 	</select>
+	
+	<!-- 로그인 시 유저 정보 가져오기 -->
+	<select id="getUser" parameterType="com.javaex.vo.UserVo" resultType="com.javaex.vo.UserVo">
+		<![CDATA[
+			select userNo,
+				   id,
+				   userName,
+				   password,
+				   joinDate
+		 	from users
+		 	where id = #{id} and password = #{password}
+		]]>
+	</select>
+
+
 
 </mapper>

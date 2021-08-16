@@ -1,5 +1,7 @@
 package com.javaex.Dao;
 
+import java.util.Map;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -27,5 +29,17 @@ public class UserDao {
 		return sqlSession.selectOne("user.chkId",id);
 	}
 	
+	public void crtBlog(Map<String, Object> userMap) {
+		System.out.println("[UserDao.crtBlog()]");
+		
+		sqlSession.insert("blog.crtBlog", userMap);
+		
+	}
+	
+	public UserVo getUser(UserVo userVo) {
+		System.out.println("[UserDao.getUser()]");
+		
+		return sqlSession.selectOne("user.getUser",userVo);
+	}
 	
 }

@@ -104,7 +104,6 @@
 							<td class="text-right">2020/07/23</td>
 						</tr>
 						
-						
 					</table>
 				</div>
 				<!-- //list -->
